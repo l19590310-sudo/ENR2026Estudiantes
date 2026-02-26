@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bulma CSS -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+    <title>{% block title %}{% endblock %}</title>
+
+    <style>
+        body {
+            background: linear-gradient(135deg, #1c62b9);
+            min-height: 100vh;
+        }
+
+        .main-container {
+            background: white;
+            padding: 2px;
+            border-radius: 5px;
+            box-shadow: 0 10px 7px rgba(0,0,0,0.15);
+        }
+
+        .title-custom {
+            color: #0f3057;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <section class="section">
+        <div class="container">
+            
+            <div class="main-container">
+                
+                <h1 class="title has-text-centered title-custom">
+                    Gestión de Estudiantes
+                </h1>
+                <hr>
+
+                {% block content %}{% endblock %}
+            
+            </div>
+
+        </div>
+    </section>
+
+</body>
+</html>

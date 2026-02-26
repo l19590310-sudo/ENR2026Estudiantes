@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% block title %} Agregar Estudiante {% endblock %}
+
+{% block content %}
+<section class="section">
+    <div class="container">
+        <div class="columns is-centered">
+            <div class="column is-6">
+                
+                <div class="box">
+                    <h3 class="title is-4 has-text-centered">
+                        Agregar Estudiante
+                    </h3>
+
+                    <form action="{{ url_for('create_estudiante') }}" method="POST">
+
+                        <!-- No. Control -->
+                        <div class="field">
+                            <label class="label">No. Control</label>
+                            <div class="control">
+                                <input class="input" type="text" 
+                                       name="no_control" 
+                                       placeholder="Ej. 20230045"
+                                       required>
+                            </div>
+                        </div>
+
+                        <!-- Nombre -->
+                        <div class="field">
+                            <label class="label">Nombre</label>
+                            <div class="control">
+                                <input class="input" type="text" 
+                                       name="nombre" 
+                                       placeholder="Nombre del estudiante"
+                                       required>
+                            </div>
+                        </div>
+
+                        <!-- Apellido Paterno -->
+                        <div class="field">
+                            <label class="label">Apellido Paterno</label>
+                            <div class="control">
+                                <input class="input" type="text" 
+                                       name="ap_paterno" 
+                                       required>
+                            </div>
+                        </div>
+
+                        <!-- Apellido Materno -->
+                        <div class="field">
+                            <label class="label">Apellido Materno</label>
+                            <div class="control">
+                                <input class="input" type="text" 
+                                       name="ap_materno" 
+                                       required>
+                            </div>
+                        </div>
+
+                        <!-- Semestre -->
+                        <div class="field">
+                            <label class="label">Semestre</label>
+                            <div class="control">
+                                <input class="input" type="number" 
+                                       name="semestre" 
+                                       min="1"
+                                       max="12"
+                                       required>
+                            </div>
+                        </div>
+
+                        <!-- Botones -->
+                        <div class="field is-grouped is-grouped-centered mt-5">
+                            <div class="control">
+                                <button type="submit" class="button is-primary">
+                                    Guardar
+                                </button>
+                            </div>
+                            <div class="control">
+                                <a href="{{ url_for('index') }}" class="button is-danger is-light">
+                                    Cancelar
+                                </a>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
