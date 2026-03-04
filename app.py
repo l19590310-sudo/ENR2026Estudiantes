@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 #crear instancia
-app =  Flask(_name_)
+app =  Flask(__name__)
 
 # Configuración de la base de datos PostgreSQL
 app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL')
@@ -97,5 +97,5 @@ def getAlumnos():
     return 'Aqui van los alumnos'
 
 
-if _name_ == '_main_':
+if __name__ == '_main_':
     app.run(debug=True)
