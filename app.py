@@ -16,7 +16,7 @@ db = SQLAlchemy(app)
 
 #Modelo de la base de datos
 class Estudiante(db.Model):
-    _tablename_ = 'estudiantes'
+    __tablename__ = 'estudiantes'
     no_control = db.Column(db.String, primary_key=True)
     nombre = db.Column(db.String)
     ap_paterno = db.Column(db.String)
